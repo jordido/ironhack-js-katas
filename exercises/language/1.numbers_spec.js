@@ -51,11 +51,11 @@ describe('Working with Numbers', function() {
   })
 
   it('equality with type cohersion -undefined-', function() {
-    var number1  = 0;
+    var number1  = undefined;
     var number2  = undefined;
     var equality = number1 == number2;
 
-    assert.equal(equality, false);
+    assert.equal(equality, true);
   })
 
   it('equality with type checking', function() {
@@ -72,6 +72,7 @@ describe('Working with Numbers', function() {
     var numberOfWeeks      = 5;
     var numberOfDaysInWeek = 7;
     var totalNumberOfDays = numberOfWeeks * numberOfDaysInWeek;
+
 
     assert.equal(35, totalNumberOfDays);
   })
