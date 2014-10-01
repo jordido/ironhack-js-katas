@@ -7,7 +7,7 @@ describe('Working with Arrays', function() {
   // assert.equal(<expression>, <expressionExpectation>);
 
   it('create an array without the new operator', function() {
-    var array =[];
+    var array = [];
 
     assert.isArray(array);
   })
@@ -50,17 +50,17 @@ describe('Working with Arrays', function() {
   })
 
   it('equality', function() {
-    var fruits1 = ['orange', 'apple', 'banana', 'pineapple'].toString();
-    var fruits2 = ['orange', 'apple', 'banana', 'pineapple'].toString();
-    var equality = fruits1 == fruits2;
+    var fruits1 = ['orange', 'apple', 'banana', 'pineapple'];
+    var fruits2 = ['orange', 'apple', 'banana', 'pineapple'];
+    var equality = fruits1.toString() == fruits2.toString();
 
     assert.equal(equality, true)
   })
 
   it('equality with type checking', function() {
-    var fruits1 = ['orange', 'apple', 'banana', 'pineapple'].toString();
-    var fruits2 = ['orange', 'apple', 'banana', 'pineapple'].toString();
-    var equality = fruits1 === fruits2;
+    var fruits1 = ['orange', 'apple', 'banana', 'pineapple'];
+    var fruits2 = ['orange', 'apple', 'banana', 'pineapple'];
+    var equality = fruits1.toString() === fruits2.toString();
 
     assert.equal(equality, true)
   })
