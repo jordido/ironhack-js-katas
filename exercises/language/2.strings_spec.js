@@ -7,11 +7,11 @@ describe('Working with Strings', function() {
   // assert.equal(<expression>, <expressionExpectation>);
 
   it('create a string without using variable declaration', function() {
-    assert.equal('Jhon Doe', '');
+    assert.equal('Jhon Doe', 'Jhon Doe');
   });
 
   it('create a string using a variable declaration', function() {
-    var name;
+    var name = 'Jhon Doe';
 
     assert.equal('Jhon Doe', name);
   });
