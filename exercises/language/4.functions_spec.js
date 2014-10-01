@@ -5,6 +5,9 @@ describe('Working with Functions', function() {
   it('returning a number', function() {
     // Create a function called sum that recives 4 arguments and return the
     // sum of all of them
+    var sum = function(arg1, arg2, arg3, arg4) {
+      return arg1 + arg2 + arg3 + arg4;
+    }
 
     assert.equal(sum.length, 4);
     assert.equal(sum(1,2,3,4), 10);
@@ -12,7 +15,9 @@ describe('Working with Functions', function() {
 
   it('returning a string', function() {
     // Create a function called shout that appends two exclamation marks at the end
-
+    var shout = function(arg) {
+      return arg + "!!";
+    }
     assert.equal(shout.length, 1);
     assert.equal(shout('Hohoho'), 'Hohoho!!');
   })

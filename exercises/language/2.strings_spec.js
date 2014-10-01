@@ -92,7 +92,7 @@ describe('Working with Strings', function() {
   it('transform a string into a number', function() {
     var number = parseInt('325');
 
-    assert.strictEqual(325+'', number);
+    assert.strictEqual(325, number);
   });
 
   it('transform a tring in a array', function() {

@@ -107,7 +107,6 @@ describe('Working with Strings', function() {
     var version = '9000';
     var model = name + version;
 
-
     assert.equal('HAL9000', model);
   });
 
@@ -123,6 +122,7 @@ describe('Working with Strings', function() {
     var numberOfWeekDays = 7;
     var weekIntro        = 'A week have';
     var weekOutro        = 'days';
+
     var sentence = weekIntro + ' ' + numberOfWeekDays + ' ' + weekOutro;
 
     assert.equal('A week have 7 days', sentence);
@@ -178,7 +178,7 @@ describe('Working with Strings', function() {
   it('transform a string into a number', function() {
     var number = parseInt('325');
 
-    assert.strictEqual(325+'', number);
+    assert.strictEqual(325, number);
   });
 
   it('transform a tring in a array', function() {
@@ -186,7 +186,6 @@ describe('Working with Strings', function() {
     var array = model.split('');
 
     assert.equal(['H','A','L','9','0','0','0'].toString(), array.toString());
-
   });
 })
 
@@ -199,14 +198,14 @@ describe('Working with Arrays', function() {
   // assert.equal(<expression>, <expressionExpectation>);
 
   it('create an array without the new operator', function() {
-    var array;
+    var array = [];
 
     assert.isArray(array);
   })
 
   it('calculates the numbers of item in an array', function() {
     var fruits = ['orange', 'apple', 'banana', 'pineapple'];
-    var length;
+    var length = fruits.length;
 
     assert.equal(4, length);
   })
@@ -214,33 +213,33 @@ describe('Working with Arrays', function() {
   it('adds an element to the begining of the array', function() {
     var fruits = ['apple', 'banana', 'pineapple'];
     var orange = 'orange';
-
+    fruits.unshift(orange);
     assert.deepEqual(['orange', 'apple', 'banana', 'pineapple'], fruits)
   })
 
   it('adds an element to the end of the array', function() {
     var fruits    = ['orange', 'apple', 'banana'];
     var pineapple = 'pineapple';
-
+    fruits.push(pineapple);
     assert.deepEqual(['orange', 'apple', 'banana', 'pineapple'], fruits)
   })
 
   it('remove an element at the begining of the array', function() {
     var fruits    = ['orange', 'apple', 'banana', 'pineapple'];
-
+    fruits.shift();
     assert.deepEqual(['apple', 'banana', 'pineapple'], fruits)
   })
 
   it('remove an element at the end of the array', function() {
     var fruits = ['orange', 'apple', 'banana', 'pineapple'];
-
+    fruits.pop();
     assert.deepEqual(['orange', 'apple', 'banana'], fruits)
   })
 
   it('equality', function() {
     var fruits1 = ['orange', 'apple', 'banana', 'pineapple'];
     var fruits2 = ['orange', 'apple', 'banana', 'pineapple'];
-    var equality = fruits1 == fruits2;
+    var equality = fruits1.toString() == fruits2.toString();
 
     assert.equal(equality, true)
   })
@@ -248,15 +247,15 @@ describe('Working with Arrays', function() {
   it('equality with type checking', function() {
     var fruits1 = ['orange', 'apple', 'banana', 'pineapple'];
     var fruits2 = ['orange', 'apple', 'banana', 'pineapple'];
-    var equality = fruits1 === fruits2;
+    var equality = fruits1.toString() === fruits2.toString();
 
     assert.equal(equality, true)
   })
 
   it('creates a string from an array', function() {
     var fruits = ['orange', 'apple', 'banana', 'pineapple'];
-
-    assert.equal('orange, apple, banana, pineapple', string)
+    var string = fruits.join(', ');
+    assert.equal('orange, apple, banana, pineapple', string.toString())
   })
 })
 
@@ -267,6 +266,9 @@ describe('Working with Functions', function() {
   it('returning a number', function() {
     // Create a function called sum that recives 4 arguments and return the
     // sum of all of them
+    var sum = function(arg1, arg2, arg3, arg4) {
+      return arg1 + arg2 + arg3 + arg4;
+    }
 
     assert.equal(sum.length, 4);
     assert.equal(sum(1,2,3,4), 10);
@@ -274,7 +276,9 @@ describe('Working with Functions', function() {
 
   it('returning a string', function() {
     // Create a function called shout that appends two exclamation marks at the end
-
+    var shout = function(arg) {
+      return arg + "!!";
+    }
     assert.equal(shout.length, 1);
     assert.equal(shout('Hohoho'), 'Hohoho!!');
   })
