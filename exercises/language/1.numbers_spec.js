@@ -1,4 +1,4 @@
-  describe('Working with Numbers', function() {
+describe('Working with Numbers', function() {
 
   // Change the expresion after the comma to fullfill the expectation
   // The `assert.equals` expresion makes the test pass if and only if both
@@ -72,6 +72,7 @@
     var numberOfWeeks      = 5;
     var numberOfDaysInWeek = 7;
     var totalNumberOfDays = numberOfWeeks * numberOfDaysInWeek;
+
 
     assert.equal(35, totalNumberOfDays);
   })
