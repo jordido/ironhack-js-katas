@@ -1,4 +1,4 @@
-describe('Working with Numbers', function() {
+  describe('Working with Numbers', function() {
 
   // Change the expresion after the comma to fullfill the expectation
   // The `assert.equals` expresion makes the test pass if and only if both
@@ -71,11 +71,7 @@ describe('Working with Numbers', function() {
     // <numberOfWeeks>
     var numberOfWeeks      = 5;
     var numberOfDaysInWeek = 7;
-<<<<<<< HEAD
     var totalNumberOfDays = numberOfWeeks * numberOfDaysInWeek;
-=======
-    var totalNumberOfDays = 35;
->>>>>>> 0f27c727794032cc6e3e7fb5fb304d66c0ed1b6b
 
     assert.equal(35, totalNumberOfDays);
   })
@@ -108,7 +104,7 @@ describe('Working with Strings', function() {
   it('concatenate two strings using plus operator', function() {
     var name    = 'HAL';
     var version = '9000';
-    var model;
+    var model = name + version;
 
     assert.equal('HAL9000', model);
   });
@@ -116,7 +112,7 @@ describe('Working with Strings', function() {
   it('concatenate two strings using plus operator', function() {
     var firstName = 'Jhon';
     var lastName  = 'Doe';
-    var fullName;
+    var fullName = firstName +' '+ lastName;
 
     assert.equal('Jhon Doe', fullName);
   });
@@ -125,14 +121,14 @@ describe('Working with Strings', function() {
     var numberOfWeekDays = 7;
     var weekIntro        = 'A week have';
     var weekOutro        = 'days';
-    var sentence;
+    var sentence = weekIntro+ ' ' + numberOfWeekDays + ' ' + weekOutro;
 
     assert.equal('A week have 7 days', sentence);
   })
 
   it('calculate the number of characters of a string', function() {
     var name   = 'Jhon Doe';
-    var length;
+    var length = name.length;
 
     assert.equal(8, length);
   })
@@ -142,7 +138,7 @@ describe('Working with Strings', function() {
     var string2 = 'Jhon Doe';
     var equality = string1 == string2
 
-    assert.equal(equality, false);
+    assert.equal(equality, true);
   })
 
   it('equality with case sensitive', function() {
@@ -150,7 +146,7 @@ describe('Working with Strings', function() {
     var string2 = 'jhon doe';
     var equality = string1 == string2
 
-    assert.equal(equality, true);
+    assert.equal(equality, false);
   })
 
   it('equality with type cohersion -null-', function() {
@@ -174,20 +170,21 @@ describe('Working with Strings', function() {
     var string2 = undefined;
     var equality = string1 === string2
 
-    assert.equal(equality, true);
+    assert.equal(equality, false);
   })
 
   it('transform a string into a number', function() {
     var number = '325';
+    var number = parseInt(number);
 
     assert.strictEqual(325, number);
   });
 
-  it('transform a tring in a array', function() {
+  it('transform a string in a array', function() {
     var model = 'HAL9000';
-    var array;
+    var array = model.split('');
 
-    assert.equal(['H','A','L','9','0','0','0'], array);
+    assert.equal(['H','A','L','9','0','0','0'].toString(), array.toString());
   });
 })
 

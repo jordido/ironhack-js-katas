@@ -15,5 +15,8 @@
     "gulp-mocha-phantomjs": "~0.5.0",
     "gulp-template-compile": "~0.2.1",
     "gulp-rename": "~1.2.0"
+  },
+  "dependencies": {
+    "gulp-watch": "^1.0.7"
   }
 }
