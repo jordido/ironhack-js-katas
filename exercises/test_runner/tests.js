@@ -7,23 +7,23 @@ describe('Working with Numbers', function() {
   // assert.equal(<expression>, <expressionExpectation>);
 
   it('sum', function() {
-    assert.equal(3 + 4, 0);
+    assert.equal(3 + 4, 7);
   })
 
   it('difference', function() {
-    assert.equal(4 - 2, 0);
+    assert.equal(4 - 2, 2);
   })
 
   it('multiplaction', function() {
-    assert.equal(3 * 2, 0);
+    assert.equal(3 * 2, 6);
   })
 
   it('division', function() {
-    assert.equal(6 / 2, 0);
+    assert.equal(6 / 2, 3);
   })
 
   it('modulus', function() {
-    assert.equal(10 % 3, 0);
+    assert.equal(10 % 3, 1);
   })
 
   it('equality', function() {
@@ -31,7 +31,7 @@ describe('Working with Numbers', function() {
     var number2  = 5;
     var equality = number1 == number2;
 
-    assert.equal(equality, false);
+    assert.equal(equality, true);
   })
 
   it('equality with type cohersion', function() {
@@ -39,15 +39,15 @@ describe('Working with Numbers', function() {
     var string   = '5';
     var equality = number == string;
 
-    assert.equal(equality, false);
+    assert.equal(equality, true);
   })
 
   it('equality with type cohersion -null-', function() {
-    var number1  = 0;
+    var number1  = null;
     var number2  = null;
     var equality = number1 == number2;
 
-    assert.equal(equality, false);
+    assert.equal(equality, true);
   })
 
   it('equality with type cohersion -undefined-', function() {
@@ -63,7 +63,7 @@ describe('Working with Numbers', function() {
     var string   = '5';
     var equality = number === string;
 
-    assert.equal(equality, true);
+    assert.equal(equality, false);
   })
 
   it('using variables to do operations', function() {
@@ -71,14 +71,14 @@ describe('Working with Numbers', function() {
     // <numberOfWeeks>
     var numberOfWeeks      = 5;
     var numberOfDaysInWeek = 7;
-    var totalNumberOfDays;
+    var totalNumberOfDays = numberOfWeeks * numberOfDaysInWeek;
 
     assert.equal(35, totalNumberOfDays);
   })
 
   it('transforming a number to string', function() {
     // Note: don't use parseInt
-    assert.strictEqual('5', 5);
+    assert.strictEqual('5', 5+'');
   })
 
 })
@@ -92,11 +92,11 @@ describe('Working with Strings', function() {
   // assert.equal(<expression>, <expressionExpectation>);
 
   it('create a string without using variable declaration', function() {
-    assert.equal('Jhon Doe', '');
+    assert.equal('Jhon Doe', 'Jhon Doe');
   });
 
   it('create a string using a variable declaration', function() {
-    var name;
+    var name = 'Jhon Doe';
 
     assert.equal('Jhon Doe', name);
   });
