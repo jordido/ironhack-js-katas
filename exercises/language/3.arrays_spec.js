@@ -7,7 +7,7 @@ describe('Working with Arrays', function() {
   // assert.equal(<expression>, <expressionExpectation>);
 
   it('create an array without the new operator', function() {
-    var array;
+    var array = ['car', 'house','tree'];
 
     assert.isArray(array);
   })
@@ -16,12 +16,13 @@ describe('Working with Arrays', function() {
     var fruits = ['orange', 'apple', 'banana', 'pineapple'];
     var length;
 
-    assert.equal(4, length);
+    assert.equal(4, fruits.length);
   })
 
   it('adds an element to the begining of the array', function() {
     var fruits = ['apple', 'banana', 'pineapple'];
     var orange = 'orange';
+    fruits.unshift(orange);
 
     assert.deepEqual(['orange', 'apple', 'banana', 'pineapple'], fruits)
   })
@@ -29,19 +30,21 @@ describe('Working with Arrays', function() {
   it('adds an element to the end of the array', function() {
     var fruits    = ['orange', 'apple', 'banana'];
     var pineapple = 'pineapple';
+    fruits.push(pineapple);    
 
     assert.deepEqual(['orange', 'apple', 'banana', 'pineapple'], fruits)
   })
 
   it('remove an element at the begining of the array', function() {
     var fruits    = ['orange', 'apple', 'banana', 'pineapple'];
+    fruits.shift();
 
     assert.deepEqual(['apple', 'banana', 'pineapple'], fruits)
   })
 
   it('remove an element at the end of the array', function() {
     var fruits = ['orange', 'apple', 'banana', 'pineapple'];
-
+    fruits.pop();
     assert.deepEqual(['orange', 'apple', 'banana'], fruits)
   })
 
@@ -50,7 +53,7 @@ describe('Working with Arrays', function() {
     var fruits2 = ['orange', 'apple', 'banana', 'pineapple'];
     var equality = fruits1 == fruits2;
 
-    assert.equal(equality, true)
+    assert.equal(equality, false)
   })
 
   it('equality with type checking', function() {
@@ -58,11 +61,12 @@ describe('Working with Arrays', function() {
     var fruits2 = ['orange', 'apple', 'banana', 'pineapple'];
     var equality = fruits1 === fruits2;
 
-    assert.equal(equality, true)
+    assert.equal(equality, false)
   })
 
   it('creates a string from an array', function() {
     var fruits = ['orange', 'apple', 'banana', 'pineapple'];
+    var string = fruits.join(', ');
 
     assert.equal('orange, apple, banana, pineapple', string)
   })
