@@ -19,7 +19,7 @@ describe('Working with Strings', function() {
   it('concatenate two strings using plus operator', function() {
     var name    = 'HAL';
     var version = '9000';
-    var model = name+version;
+    var model = name + version;
 
     assert.equal('HAL9000', model);
   });
@@ -36,10 +36,11 @@ describe('Working with Strings', function() {
     var numberOfWeekDays = 7;
     var weekIntro        = 'A week have';
     var weekOutro        = 'days';
+
     var sentence = weekIntro + ' ' + numberOfWeekDays + ' ' + weekOutro;
 
     assert.equal('A week have 7 days', sentence);
-  })
+  });
 
   it('calculate the number of characters of a string', function() {
     var name   = 'Jhon Doe';
@@ -51,10 +52,10 @@ describe('Working with Strings', function() {
   it('equality', function() {
     var string1 = 'Jhon Doe';
     var string2 = 'Jhon Doe';
-    var equality = string1 == string2
+    var equality = string1 == string2;
 
     assert.equal(equality, true);
-  })
+  });
 
   it('equality with case sensitive', function() {
     var string1 = 'Jhon Doe';
@@ -62,34 +63,34 @@ describe('Working with Strings', function() {
     var equality = string1.toUpperCase() == string2.toUpperCase()
 
     assert.equal(equality, true);
-  })
+  });
 
   it('equality with type cohersion -null-', function() {
     var string1 = '';
     var string2 = null;
-    var equality = string1 == string2
+    var equality = string1 == string2;
 
     assert.equal(equality, false);
-  })
+  });
 
   it('equality with type cohersion -undefined-', function() {
     var string1 = '';
     var string2 = undefined;
-    var equality = string1 == string2
+    var equality = string1 == string2;
 
     assert.equal(equality, false);
-  })
+  });
 
   it('equality with type checking', function() {
     var string1 = '';
     var string2 = undefined;
-    var equality = string1 === string2
+    var equality = string1 === string2;
 
     assert.equal(equality, false);
-  })
+  });
 
   it('transform a string into a number', function() {
-    var number = '325';
+    var number = parseInt('325');
 
     assert.strictEqual(325+'', number);
   });
@@ -97,6 +98,7 @@ describe('Working with Strings', function() {
   it('transform a tring in a array', function() {
     var model = 'HAL9000';
     var array = model.split('');
-    assert.equal(['H','A','L','9','0','0','0'].toString(),array.toString());
+
+    assert.equal(['H','A','L','9','0','0','0'].toString(), array.toString());
   });
 })
