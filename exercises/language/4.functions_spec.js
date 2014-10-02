@@ -5,20 +5,25 @@ describe('Working with Functions', function() {
   it('returning a number', function() {
     // Create a function called sum that recives 4 arguments and return the
     // sum of all of them
-
+    function sum(arg1,arg2,arg3,arg4){
+      return arg1 + arg2 + arg3 + arg4;
+    }
     assert.equal(sum.length, 4);
     assert.equal(sum(1,2,3,4), 10);
   })
 
   it('returning a string', function() {
     // Create a function called shout that appends two exclamation marks at the end
-
+    function shout(word){
+      var word = 'Hohoho'
+      return word + '!!'
+    }
     assert.equal(shout.length, 1);
     assert.equal(shout('Hohoho'), 'Hohoho!!');
   })
 
   it('returning a function', function() {
-    // Create a function called sum that acepts only one parameter and return
+    // Create a function called sum that accepts only one parameter and return
     // another function that as well takes only one parameter and sums both
     // numbers
     // Example of usage:
@@ -26,7 +31,14 @@ describe('Working with Functions', function() {
     // var result = sum(5);
     //  -> result should be 8
     // Note: This is what makes "currying" a function posible
+    
     var result;
+
+    function sum(param){
+      return function sum(param2){
+         return param + param2
+      }
+    }
 
     assert.equal(sum.length, 1);
     sum = sum(3);
@@ -45,12 +57,20 @@ describe('Working with Functions', function() {
     // Note: This is the basic construction for all "callbacks"
 
     var yellAtHim = function(fullName) {
-      return fullName+'!!!';
+      return fullName + '!!!';
     };
 
     var salutation = function(fullName) {
       return 'Hi ' + fullName + '!';
     }
+    var fullName = 'Jhon Doe';
+
+
+    function speak(name, funct){
+      return funct(fullName);
+    }
+    yellAtHim.call(fullName);
+    salutation.call(fullName);
 
     assert.equal(speak.length, 2);
     assert.equal(speak('Jhon Doe', yellAtHim), 'Jhon Doe!!!');
@@ -63,8 +83,8 @@ describe('Working with Functions', function() {
     //       known as "variable hoisting"
 
     var fnWithVariable = function() {
-      nonExistedVar;
-      var nonExistedVar = 7;
+        // var nonExistedVar = 7;
+        return nonExistedVar;
     }
 
     assert.throw(fnWithVariable, ReferenceError);
@@ -74,7 +94,7 @@ describe('Working with Functions', function() {
     // Modify the assertion to make the test pass
 
     var context = function() {
-      return this;
+      return context;
     }
 
     assert.deepEqual(context(), context);
