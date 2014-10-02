@@ -75,7 +75,7 @@ describe('Working with Functions', function() {
     assert.equal(speak.length, 2);
     assert.equal(speak('Jhon Doe', yellAtHim), 'Jhon Doe!!!');
     assert.equal(speak('Jhon Doe', salutation), 'Hi Jhon Doe!');
-  })
+  }) 
 
   it('variable declaration inside functions', function() {
     // Modify the function to make the test pass
